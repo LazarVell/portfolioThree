@@ -51,6 +51,10 @@ canvas {
     margin-bottom: var(--spacing);
   }
 
+  #title {
+    font-size: 40px;
+  }
+
   section {
     grid-column: 2 / 8;
     padding: 1rem;
