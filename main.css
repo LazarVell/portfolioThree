@@ -27,17 +27,17 @@ canvas {
 
 
 :root {
-  --dark-bg: rgba(15, 15, 15, 0.95);
+  --section-bg: rgb(255, 153, 0);
   --spacing: 350px;
 
-  font-family: brandon-grotesque, sans-serif;
-  font-weight: 400;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
   font-style: normal;
 }
 
 
 main {
-  color: white;
+  color: black;
   z-index: 99;
   position: absolute;
   margin: 0px auto;
@@ -47,11 +47,6 @@ main {
   grid-template-columns: repeat(12, 1fr);
 }
 
-h1, h2, h3, blockquote {
-  font-family: elevon, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
 
 canvas {
   position: fixed;
@@ -62,11 +57,14 @@ canvas {
 
 
   header {
-    background: var(--dark-bg);
-    grid-column: 2 / span 5;
+    background-color: rgb(239, 234, 234);
+    border-radius: 30px;
+    grid-column: 2 / span 4;
     font-size: 2.5rem;
     padding: 2rem;
+    padding-bottom: 0;
     margin-bottom: var(--spacing);
+    display: flex;
   }
 
   #title {
@@ -76,29 +74,75 @@ canvas {
   section {
     grid-column: 2 / 8;
     padding: 1rem;
-    background: var(--dark-bg);
+    background: var(--section-bg);
+    opacity: 0.7;
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);
+    border-radius: 25px;
+    transition: opacity 1s;
+  }
+
+  section:hover {
+    opacity: 1;
   }
 
   blockquote {
-    margin: 0;
-    padding: 0;
-    grid-column: 2 / span 9;
+    background-color: rgb(239, 234, 234);
+    border-radius: 30px;
+    grid-column: 2 / span 4;
+    font-size: 2.5rem;
+    padding: 2rem;
+    padding-bottom: 0;
     margin-bottom: var(--spacing);
   }
 
   blockquote p {
-    color: black;
-    background-color: white;
-    font-size: 4rem;
-    display: inline;
-    line-height: 1;
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+  }
+
+a:hover, a:visited, a:link {
+  color: var(--section-bg);
+}
+
+a:active {
+  color: orangered;
+}
+
+  blockquote img {
+    width: 3rem;
+    aspect-ratio: 1;
+    margin-right: 10px;
   }
 
   .left {
     grid-column: 6 / 12;
+  }
+
+  .company-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .company-section img {
+    width: 20%;
+    height: 20%;
+  }
+
+  .bg--lightgray {
+    background-color: rgb(211, 210, 210)
+  }
+
+  .color--dark {
+    color: black;
+  }
+
+  .color--white {
+    color: white;
   }
 
 /*# sourceMappingURL=main.css.map*/
