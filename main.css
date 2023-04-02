@@ -25,6 +25,11 @@ canvas {
   left: 0;
 }
 
+#bg {
+  width: 100vw;
+  height: 100vh;
+}
+
 
 :root {
   --section-bg: rgb(255, 153, 0);
@@ -59,13 +64,60 @@ canvas {
   header {
     background-color: rgb(239, 234, 234);
     border-radius: 30px;
-    grid-column: 2 / span 4;
+    grid-column: 2 / span 5;
     font-size: 2.5rem;
     padding: 2rem;
     padding-bottom: 0;
     margin-bottom: var(--spacing);
     display: flex;
+    flex-direction: row;
   }
+
+  @media only screen and (max-width: 426px) {
+    header {
+      flex-direction: column;
+      grid-column: 2 / 12;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    header {
+      grid-column: 2 / span 9;
+    }
+  }
+
+  @media only screen and (min-width: 801px) and ( max-width: 1024px) {
+    header {
+      grid-column: 2 / span 7
+    }
+  }
+
+  @media only screen and (min-width: 1025px) {
+    header {
+      grid-column: 2 / span 6
+    }
+  }
+
+  @media only screen and (min-width: 1441px ) {
+    header {
+      grid-column: 2 / span 5
+    }
+  }
+
+  @media only screen and (min-width: 1741px ) {
+    header {
+      grid-column: 2 / span 4
+    }
+  }
+
+  @media only screen and (min-width: 2141px) {
+    header {
+      grid-column: 2 / span 3
+    }
+  }
+
+  
+
 
   #title {
     font-size: 40px;
@@ -83,6 +135,12 @@ canvas {
     transition: opacity 1s;
   }
 
+  @media only screen and (max-width: 426px) {
+    section {
+      grid-column: 2 / 12;
+    }
+  }
+
   section:hover {
     opacity: 1;
   }
@@ -95,6 +153,20 @@ canvas {
     padding: 2rem;
     padding-bottom: 0;
     margin-bottom: var(--spacing);
+  }
+
+  @media only screen and (max-width: 600px) {
+    blockquote {
+      grid-column: 2 / 12;
+      margin: 0;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1400px) {
+    blockquote {
+      grid-column: 2 / 8;
+      margin: 0;
+    }
   }
 
   blockquote p {
@@ -121,16 +193,36 @@ a:active {
     grid-column: 6 / 12;
   }
 
+  @media only screen and (max-width: 426px) {
+    .left {
+      grid-column: 1 / 12;
+    }
+  }
+
   .company-section {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 30px;
   }
 
+  @media only screen and (max-width: 768px) {
+    .company-section {
+      flex-direction: column;
+    }
+  }
+
   .company-section img {
     width: 20%;
     height: 20%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .company-section img {
+      width: 50%;
+      height: 20%;
+    }
   }
 
   .bg--lightgray {
@@ -144,5 +236,29 @@ a:active {
   .color--white {
     color: white;
   }
+
+  #email-button {
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background-color: var(--section-bg);
+  border-color: var(--section-bg);
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#email-button:hover {
+  color: #fff;
+  background-color: rgb(255, 119, 0);
+  border-color: rgb(255, 119, 0);
+}
+
 
 /*# sourceMappingURL=main.css.map*/
